@@ -1,35 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <style>
+      body {
+        visibility: hidden;
+      }
+    </style>
     <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-
-    <!-- Fontawesome is our recomended library for icons -->
+    <title>Excuse Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+    <div class="container">
+      <div class="fixed-text">OMG! you will not believe me but...</div>
+      <p class="excuses"></p>
+      <div class="boton"><button id="button">New Excuse</button></div>
     </div>
 
     <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="/app.js"></script>
+    <script type="module" src="/app.js" defer></script>
   </body>
 </html>
