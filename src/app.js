@@ -15,28 +15,23 @@ const when = [
   "while I was praying",
 ];
 
-//crea numeros aleatorios para elegir las partes de la excusa
-function indexSelector() {
-  let randomWhoAndAction = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
-  let randomIndexWhat = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
-  let randomIndexWhen = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
-  return [randomWhoAndAction, randomIndexWhat, randomIndexWhen];
+function getRandomElement(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
 }
 
-//usa los numeros para generar la excusa
-function excuseGenerator() {
-  const [indexWho] = indexSelector();
-  const [indexAction] = indexSelector();
-  const [, indexWhat] = indexSelector();
-  const [, , indexWhen] = indexSelector();
-  let excusa = [
-    who[indexWho],
-    action[indexAction],
-    what[indexWhat],
-    when[indexWhen],
-  ];
+function generateExcuse() {
+  const sentenceParts = [];
+  const partsArrays = [who, action, what, when];
+  partsArrays.forEach((partList) => {
+    sentenceParts.push(getRandomElement(partList));
+  });
+  return sentenceParts.join(" ") + ".";
+}
+
+function showExcuse() {
   let p = document.querySelector(".excuses");
-  p.textContent = excusa.join(" ");
+  p.textContent = generateExcuse();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,5 +42,5 @@ document.addEventListener("DOMContentLoaded", () => {
   boton.addEventListener("click", () => {
     location.reload();
   });
-  excuseGenerator();
+  showExcuse();
 });
